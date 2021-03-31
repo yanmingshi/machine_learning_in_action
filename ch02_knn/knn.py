@@ -53,6 +53,15 @@ def classify0(in_x, data_set, labels, k):
     >>> b=operator.itemgetter(1)      //定义函数b，获取对象的第1个域的值
     >>> b(a) 
     2 
+    [('x', 1), ('y', 2)]
+    key=operator.itemgetter(1) 按第一位进行排序
+    
+    a = [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]
+    print(a)
+    c = sorted(a, key=operator.itemgetter(1, 2)) 先按第一位，再按第二位排序
+    print(c)
+    [('john', 'A', 15), ('jane', 'B', 12), ('dave', 'B', 10)]
+    [('john', 'A', 15), ('dave', 'B', 10), ('jane', 'B', 12)]
     """
     # 排序
     sorted_class_count = sorted(class_count.items(), key=operator.itemgetter(1), reverse=True)
